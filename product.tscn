@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjd1xwtowkeqf"]
+
+[ext_resource type="Script" path="res://product.gd" id="1_4djxc"]
+[ext_resource type="Theme" uid="uid://dwrol8hyoypuh" path="res://theme.tres" id="2_u2ooo"]
+[ext_resource type="FontFile" uid="uid://ct4rxg6ctgv3j" path="res://fonts/Comfortaa/static/Comfortaa-Bold.ttf" id="3_6rnah"]
+
+[node name="Product" type="Control"]
+custom_minimum_size = Vector2(230, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 230.0
+offset_bottom = 60.0
+theme = ExtResource("2_u2ooo")
+script = ExtResource("1_4djxc")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(220, 80)
+layout_mode = 1
+offset_right = 220.0
+offset_bottom = 80.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_6rnah")
+theme_override_font_sizes/font_size = 28
+text = "Cappuccino
+Large"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 220.0
+offset_bottom = 80.0
+focus_mode = 0
+theme = ExtResource("2_u2ooo")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

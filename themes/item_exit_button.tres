@@ -1,0 +1,92 @@
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://l2nhy1v8sa2q"]
+
+[ext_resource type="FontFile" uid="uid://53giy6w3v8kq" path="res://fonts/frisky-puppy/Frisky Puppy.ttf" id="1_16h85"]
+[ext_resource type="Texture2D" uid="uid://cf1ir0fihvvbb" path="res://icons/switch(1)(3).png" id="2_eiqql"]
+[ext_resource type="Texture2D" uid="uid://b633iv6mcyoj6" path="res://icons/switch(4).png" id="3_hpj6e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w82o0"]
+bg_color = Color(1, 0.819608, 0.580392, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5hxv"]
+bg_color = Color(0.996078, 0.768627, 0.478431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plajf"]
+bg_color = Color(0.91, 0.6734, 0.364, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2v3om"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhict"]
+bg_color = Color(0.996078, 0.768627, 0.478431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtoer"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.933333, 0.807843, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4vwj"]
+bg_color = Color(0.996078, 0.960784, 0.847059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj8a3"]
+bg_color = Color(0.190064, 0.0825169, 0.00205398, 1)
+border_color = Color(0.190064, 0.0825169, 0.00205398, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0nnc"]
+bg_color = Color(1, 0.933333, 0.807843, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2yvd"]
+bg_color = Color(0.937255, 0.592157, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01iq3"]
+bg_color = Color(0.996078, 0.768627, 0.478431, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[resource]
+Button/fonts/font = ExtResource("1_16h85")
+Button/styles/hover = SubResource("StyleBoxFlat_w82o0")
+Button/styles/normal = SubResource("StyleBoxFlat_a5hxv")
+Button/styles/pressed = SubResource("StyleBoxFlat_plajf")
+CheckButton/icons/checked = ExtResource("2_eiqql")
+CheckButton/icons/unchecked = ExtResource("3_hpj6e")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_2v3om")
+Label/fonts/font = ExtResource("1_16h85")
+LineEdit/colors/font_color = Color(0.190064, 0.0825169, 0.00205398, 1)
+LineEdit/colors/font_placeholder_color = Color(0.00392157, 0.0313726, 0.027451, 0.545098)
+LineEdit/font_sizes/font_size = 48
+LineEdit/fonts/font = ExtResource("1_16h85")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_uhict")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_mtoer")
+LineEdit/styles/panel = SubResource("StyleBoxFlat_y4vwj")
+Panel/styles/panel = SubResource("StyleBoxFlat_mj8a3")
+TabContainer/font_sizes/font_size = 32
+TabContainer/styles/panel = SubResource("StyleBoxFlat_n0nnc")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_q2yvd")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_01iq3")

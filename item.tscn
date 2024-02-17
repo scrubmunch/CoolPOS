@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnlw2h4g5gjbq"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_2iwfn"]
+[ext_resource type="Theme" uid="uid://dwrol8hyoypuh" path="res://theme.tres" id="2_se8j8"]
+[ext_resource type="FontFile" uid="uid://ct4rxg6ctgv3j" path="res://fonts/Comfortaa/static/Comfortaa-Bold.ttf" id="3_5vty6"]
+[ext_resource type="StyleBox" uid="uid://bjurvs1ef13f" path="res://StyleBoxes/ItemNormal.tres" id="4_o0ktc"]
+[ext_resource type="StyleBox" uid="uid://bvu18a0i1dwq8" path="res://StyleBoxes/ItemHover.tres" id="5_o7ilg"]
+[ext_resource type="StyleBox" uid="uid://bk46vq83tsayv" path="res://StyleBoxes/ItemPressed.tres" id="6_jjfvm"]
+[ext_resource type="Theme" uid="uid://l2nhy1v8sa2q" path="res://themes/item_exit_button.tres" id="7_q17oi"]
+[ext_resource type="FontFile" uid="uid://ufta1nhyqcr4" path="res://fonts/beachday/beachday.ttf" id="8_t2gqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67omb"]
+bg_color = Color(0.996078, 0.960784, 0.847059, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="item" type="FlowContainer"]
+custom_minimum_size = Vector2(330, 60)
+offset_right = 340.0
+offset_bottom = 60.0
+theme_override_constants/h_separation = 0
+script = ExtResource("1_2iwfn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="ColorRect2" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+offset_right = 10.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_67omb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_se8j8")
+theme_override_colors/icon_normal_color = Color(1, 0.933333, 0.807843, 1)
+theme_override_fonts/font = ExtResource("3_5vty6")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("4_o0ktc")
+theme_override_styles/hover = ExtResource("5_o7ilg")
+theme_override_styles/pressed = ExtResource("6_jjfvm")
+text = "Ham & Brie Croissant"
+alignment = 0
+text_overrun_behavior = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_t2gqs")
+theme_override_font_sizes/font_size = 36
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_q17oi")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer2/Label" to="." method="_on_label_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

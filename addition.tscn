@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5teg32cslh85"]
+
+[ext_resource type="Script" path="res://addition.gd" id="1_c3n6s"]
+[ext_resource type="FontFile" uid="uid://ct4rxg6ctgv3j" path="res://fonts/Comfortaa/static/Comfortaa-Bold.ttf" id="2_ee4ie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jouy5"]
+content_margin_left = 10.0
+bg_color = Color(0.8, 0.435294, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ygju"]
+content_margin_left = 10.0
+bg_color = Color(0.86, 0.50396, 0.0688, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30qwu"]
+content_margin_left = 10.0
+bg_color = Color(0.75, 0.4125, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Addition" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c3n6s")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.996078, 0.960784, 0.847059, 1)
+theme_override_fonts/font = ExtResource("2_ee4ie")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_jouy5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ygju")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_30qwu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ee4ie")
+theme_override_font_sizes/font_size = 20
+text = "here is some sample text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

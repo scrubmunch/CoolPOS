@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://ba00dy3ou7ft5"]
+
+[ext_resource type="Script" path="res://modifier.gd" id="1_dt1cw"]
+[ext_resource type="Theme" uid="uid://dwrol8hyoypuh" path="res://theme.tres" id="2_3e1ix"]
+[ext_resource type="StyleBox" uid="uid://bjurvs1ef13f" path="res://StyleBoxes/ItemNormal.tres" id="3_c2c6s"]
+[ext_resource type="FontFile" uid="uid://ct4rxg6ctgv3j" path="res://fonts/Comfortaa/static/Comfortaa-Bold.ttf" id="3_t4dhd"]
+[ext_resource type="Theme" uid="uid://l2nhy1v8sa2q" path="res://themes/item_exit_button.tres" id="5_gv2s3"]
+[ext_resource type="FontFile" uid="uid://cqiet32wrbwqy" path="res://fonts/beachday/beachday.otf" id="5_imd62"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcb34"]
+content_margin_left = 10.0
+bg_color = Color(0.937255, 0.592157, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Modifier" type="MarginContainer"]
+offset_right = 300.0
+offset_bottom = 40.0
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 0
+script = ExtResource("1_dt1cw")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_3e1ix")
+theme_override_colors/font_color = Color(0.996078, 0.960784, 0.847059, 1)
+theme_override_fonts/font = ExtResource("3_t4dhd")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcb34")
+theme_override_styles/hover = ExtResource("3_c2c6s")
+theme_override_styles/pressed = ExtResource("3_c2c6s")
+text = "SOY MILK"
+alignment = 0
+text_overrun_behavior = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="Control" type="Control" parent="HBoxContainer2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2/MarginContainer/Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_imd62")
+theme_override_font_sizes/font_size = 24
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Delete" type="Button" parent="HBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_gv2s3")
+
+[connection signal="pressed" from="HBoxContainer2/MarginContainer/Delete" to="." method="_on_delete_pressed"]

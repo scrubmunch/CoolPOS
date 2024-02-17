@@ -1,0 +1,782 @@
+[gd_scene load_steps=27 format=3 uid="uid://c262660lfpadr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0a3pn"]
+[ext_resource type="Theme" uid="uid://dwrol8hyoypuh" path="res://theme.tres" id="2_nl81y"]
+[ext_resource type="Script" path="res://ProductPages.gd" id="3_30yt5"]
+[ext_resource type="Script" path="res://ItemList.gd" id="3_mxvw8"]
+[ext_resource type="Texture2D" uid="uid://bvwngqmdr66sm" path="res://icons/cash.png" id="4_2vo3v"]
+[ext_resource type="Script" path="res://DITAswitch.gd" id="4_el7lk"]
+[ext_resource type="Texture2D" uid="uid://b0bu50jwdqiuk" path="res://icons/credit.png" id="5_dik83"]
+[ext_resource type="Shader" path="res://main.gdshader" id="8_i34eg"]
+[ext_resource type="Script" path="res://Settings.gd" id="9_whffd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7i08"]
+bg_color = Color(0.996078, 0.768627, 0.478431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bak5"]
+bg_color = Color(0.803922, 0.290196, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cgj4"]
+content_margin_left = 10.0
+bg_color = Color(1, 0.933333, 0.807843, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3jx"]
+bg_color = Color(0.937255, 0.592157, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmbvx"]
+bg_color = Color(0.996078, 0.768627, 0.478431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnkbd"]
+bg_color = Color(1, 0.933333, 0.807843, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2021o"]
+bg_color = Color(0.190064, 0.0825169, 0.00205398, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm1pa"]
+bg_color = Color(0.803922, 0.290196, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb8fv"]
+content_margin_left = 10.0
+bg_color = Color(0.839216, 0.54902, 0.0431373, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi808"]
+content_margin_left = 10.0
+bg_color = Color(0.937255, 0.592157, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slybx"]
+bg_color = Color(0.803922, 0.290196, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn4s8"]
+bg_color = Color(0.803922, 0.290196, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uneq"]
+bg_color = Color(0.190064, 0.0825169, 0.00205398, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wumf"]
+bg_color = Color(1, 0.933333, 0.807843, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xljmv"]
+shader = ExtResource("8_i34eg")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.227
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.003
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.00400005
+shader_parameter/brightness = 1.125
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = true
+shader_parameter/vignette_intensity = 0.37
+shader_parameter/vignette_opacity = 0.14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dcdn"]
+bg_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkyhg"]
+bg_color = Color(0.996078, 0.960784, 0.847059, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0a3pn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.996078, 0.960784, 0.847059, 1)
+
+[node name="Stripes" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -520.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -20
+
+[node name="ColorRect8" type="ColorRect" parent="Stripes"]
+custom_minimum_size = Vector2(1920, 120)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(1, 0.933333, 0.807843, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="Stripes"]
+custom_minimum_size = Vector2(1920, 120)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.996078, 0.768627, 0.478431, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Stripes"]
+custom_minimum_size = Vector2(1920, 120)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.937255, 0.592157, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Stripes"]
+custom_minimum_size = Vector2(1920, 120)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.8, 0.435294, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Stripes"]
+custom_minimum_size = Vector2(1920, 120)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.803922, 0.290196, 0, 1)
+
+[node name="UI" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftBar" type="Panel" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("2_nl81y")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/LeftBar"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r7i08")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_nl81y")
+
+[node name="ItemList" type="GridContainer" parent="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_mxvw8")
+
+[node name="Spacer2" type="Control" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Middle" type="Panel" parent="UI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_nl81y")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Middle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_nl81y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bak5")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Middle" type="VBoxContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Groups" type="TabContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nl81y")
+tab_alignment = 1
+
+[node name="ProductPages" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_30yt5")
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cgj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="VBoxContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Swap Tab" type="Panel" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3y3jx")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer/Control/Swap Tab"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ButtonContainer" type="HBoxContainer" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer/Control/Swap Tab/MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer/Control"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="ProductGroupContainer" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control/ProductPages/Panel/MarginContainer/Control"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="NotesInput" type="LineEdit" parent="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Notes"
+max_length = 38
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Right" type="VBoxContainer" parent="UI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="UI/VBoxContainer/HBoxContainer/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_nl81y")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Right/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nl81y")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/HBoxContainer/Right/Panel2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_nl81y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmbvx")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/HBoxContainer/Right/Panel2/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Additions" type="VFlowContainer" parent="UI/VBoxContainer/HBoxContainer/Right/Panel2/MarginContainer/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Toolbar" type="Panel" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_nl81y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnkbd")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/Toolbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="HBoxContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer"]
+layout_mode = 2
+
+[node name="DineinTakeaway" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control"]
+custom_minimum_size = Vector2(390, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2021o")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vm1pa")
+
+[node name="Control" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pressed" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_top = 27.0
+offset_right = 196.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jb8fv")
+
+[node name="Hover" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_top = 27.0
+offset_right = 196.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bi808")
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DineinTakeaway" type="HBoxContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="DineIn" type="Label" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Dine
+In"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="DITAswitch" type="CheckButton" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("2_nl81y")
+script = ExtResource("4_el7lk")
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Takeaway" type="Label" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Take
+away"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control"]
+custom_minimum_size = Vector2(10, 5)
+layout_mode = 2
+
+[node name="Name" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_slybx")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="NameInput" type="LineEdit" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Name/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_nl81y")
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Name"
+max_length = 36
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control"]
+custom_minimum_size = Vector2(10, 5)
+layout_mode = 2
+
+[node name="Money" type="HBoxContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wn4s8")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money/Panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_nl81y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4uneq")
+
+[node name="PriceLabel" type="Label" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money/Panel"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+text = "$0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Cash" type="Button" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 10
+focus_mode = 0
+theme = ExtResource("2_nl81y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wumf")
+icon = ExtResource("4_2vo3v")
+expand_icon = true
+
+[node name="Spacer2" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Card" type="Button" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 10
+focus_mode = 0
+theme = ExtResource("2_nl81y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wumf")
+icon = ExtResource("5_dik83")
+expand_icon = true
+
+[node name="Spacer" type="Control" parent="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="CRT" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_xljmv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_whffd")
+
+[node name="Panel" type="Panel" parent="Settings"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dcdn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="Panel" type="Panel" parent="Settings/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wkyhg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Panel/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VHSswitch" type="CheckButton" parent="Settings/Panel/MarginContainer/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RETRO MODE
+"
+
+[connection signal="draw" from="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2/ScrollContainer" to="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2/ScrollContainer" method="_on_draw"]
+[connection signal="child_entered_tree" from="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2/ScrollContainer/ItemList" to="UI/VBoxContainer/HBoxContainer/LeftBar/MarginContainer/Panel/MarginContainer/VBoxContainer2/ScrollContainer/ItemList" method="_on_child_entered_tree"]
+[connection signal="text_submitted" from="UI/VBoxContainer/HBoxContainer/Middle/MarginContainer/Panel/MarginContainer/Middle/Control2/NotesInput" to="." method="_on_note_text_submitted"]
+[connection signal="mouse_entered" from="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" to="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" to="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" to="UI/VBoxContainer/Toolbar/MarginContainer/Control/DineinTakeaway/MarginContainer/Panel/CenterContainer/DineinTakeaway/DITAswitch" method="_on_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money/Cash" to="." method="_on_cash_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/Toolbar/MarginContainer/Control/Money/Card" to="." method="_on_card_pressed"]
+[connection signal="pressed" from="Settings/Panel/MarginContainer/Panel/MarginContainer/VHSswitch" to="Settings" method="_on_vh_sswitch_pressed"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://dep1wc4nms5tw"]
+
+[ext_resource type="Theme" uid="uid://dwrol8hyoypuh" path="res://theme.tres" id="1_sboai"]
+[ext_resource type="Script" path="res://select_product_group_button.gd" id="1_uqt21"]
+[ext_resource type="StyleBox" uid="uid://cb6p2kl76hgh4" path="res://StyleBoxes/select_product_group_button.tres" id="2_22rsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unaag"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qi3ld"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.858824, 0.411765, 0.152941, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vsfs"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.678431, 0.25098, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sggge"]
+bg_color = Color(0.996078, 0.960784, 0.847059, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_unaag")
+script = ExtResource("1_uqt21")
+
+[node name="SelectProductGroupButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_sboai")
+theme_override_colors/font_color = Color(0.996078, 0.960784, 0.847059, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("2_22rsj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qi3ld")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1vsfs")
+text = "COFFEE"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Control"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="Panel" type="Panel" parent="Control/Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sggge")
+
+[connection signal="pressed" from="SelectProductGroupButton" to="." method="_on_select_product_group_button_pressed"]
